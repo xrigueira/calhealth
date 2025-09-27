@@ -1,0 +1,1255 @@
+{
+  "accrual_periodicity": "monthly",
+  "additional_limitations": "__Data Completeness:__\r\nProvisional counts are based on the records available when the data was retrieved, given by Data\\_Extract\\_Date, and may not represent all deaths that occurred during the time period.\r\n\r\nDeaths involving injuries from external or environmental forces, such as accidents, homicide and suicide, often require additional investigation that tends to delay certification of the cause and manner of death. This can result in significant under-reporting of these deaths in provisional data. For more information, see [“Timeliness of Death Certificate Data for Mortality Surveillance and Provisional Estimates”](https://www.cdc.gov/nchs/data/vsrr/report001.pdf) from the National Center for Health Statistics.",
+  "citation": "__Final Data:__\r\n\r\nCalifornia Department of Public Health. Death Statistical Master File (Static), 1970-2013. Compiled by Center for Health Statistics and Informatics.\r\n\r\nCalifornia Department of Public Health. California Comprehensive Master Death File (Static), 2014-2023. Compiled by Center for Health Statistics and Informatics.\r\n\r\n__Provisional Data:__\r\n\r\nCalifornia Department of Public Health. California Comprehensive Death File (Dynamic), 2024-2025. Compiled by Center for Health Statistics and Informatics. Date extracted: _[Data\\_Extract\\_Date]_.",
+  "contact_email": "opendata@cdph.ca.gov",
+  "data_collection_tool": "- California Electronic Death Registration System (CA-EDRS)",
+  "data_license": "Terms of Use",
+  "de_identification_method": "In accordance with the [California Health and Human Services Data De-Identification Guidelines](https://chhsdata.github.io/dataplaybook/documents/CHHS-DDG-V1.0-092316.pdf), counts less than 11 have been suppressed to protect privacy, and additional suppression has been applied to complementary cells to prevent the inference of the values of suppressed cells. An Annotation_Code of 1 denotes non-zero counts less than 11 suppressed due to small numbers, and an Annotation_Code of 2 denotes a cell suppressed as a complementary cell.\r\n\r\nSuppression is applied to complementary cells across all stratifications, including across all months for each year. Since annual counts will be provided once provisional data is finalized, complementary cells are suppressed across the months for each year even when annual counts have not yet been provided.",
+  "description": "This dataset contains counts of deaths for California counties based on information entered on death certificates. Final counts are derived from static data and include out-of-state deaths to California residents, whereas provisional counts are derived from incomplete and dynamic data. Provisional counts are based on the records available when the data was retrieved and may not represent all deaths that occurred during the time period. Deaths involving injuries from external or environmental forces, such as accidents, homicide and suicide, often require additional investigation that tends to delay certification of the cause and manner of death. This can result in significant under-reporting of these deaths in provisional data.\r\n\r\nThe final data tables include both deaths that occurred in each California county regardless of the place of residence (by occurrence) and deaths to residents of each California county (by residence), whereas the provisional data table only includes deaths that occurred in each county regardless of the place of residence (by occurrence). The data are reported as totals, as well as stratified by age, gender, race-ethnicity, and death place type. Deaths due to all causes (ALL) and selected underlying cause of death categories are provided. See temporal coverage for more information on which combinations are available for which years.\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.",
+  "geo_coverage": "California",
+  "geographic_granularity": "county",
+  "keywords": [
+    "CDPH",
+    "CHSI",
+    "COD",
+    "EDRS",
+    "LCOD",
+    "age",
+    "cause",
+    "cause of death",
+    "death",
+    "death certificate",
+    "decedent",
+    "ethnicity",
+    "gender",
+    "mortality",
+    "place of death",
+    "public health",
+    "race",
+    "sex",
+    "vital statistics"
+  ],
+  "limitations": "Limitations",
+  "name": "death-profiles-by-county",
+  "program_web_page": "https://www.cdph.ca.gov/Programs/CHSI/Pages/RAB-Data-And-Statistical-Reports.aspx",
+  "related_resources": "",
+  "resources": [
+    {
+      "description": "This data table reports the provisional monthly number of deaths that occurred in each California county regardless of the place of residence (by occurrence). __Provisional counts are based on the records available when the data was retrieved, given by Data\\_Extract\\_Date, and may not represent all deaths that occurred during the time period.__ Deaths involving injuries from external or environmental forces, such as accidents, homicide and suicide, often require additional investigation that tends to delay certification of the cause and manner of death. This can result in significant under-reporting of these deaths in provisional data.\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "3e07223632b15f76560dc3fa54e2db43",
+      "name": "2024-2025-provisional-deaths-by-month-by-county",
+      "path": "2024-2025-provisional-deaths-by-month-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Four-digit year in which the event occurred.",
+            "name": "Year",
+            "title": "Year",
+            "type": "string"
+          },
+          {
+            "description": "Two-digit month in which the event occurred. Records without valid months are excluded from reports by month but included in reports by year. The sum of counts by month for a given year may not equal the annual count.",
+            "name": "Month",
+            "title": "Month",
+            "type": "string"
+          },
+          {
+            "description": "Name of county for geography.",
+            "name": "County",
+            "title": "County Name",
+            "type": "string"
+          },
+          {
+            "description": "Whether the geography is based on the place of residence or place of occurrence. A geography type of Residence includes events for California residents even if they occurred outside of California, whereas a geography type of Occurrence includes events that occurred within California even if they were not California residents.",
+            "name": "Geography_Type",
+            "title": "Geography Type",
+            "type": "string"
+          },
+          {
+            "description": "General demographic or detail category under which events have been stratified. For example, Race-Ethnicity or Gender. Will be Total Population if there is no stratification other than underlying cause of death.",
+            "name": "Strata",
+            "title": "Strata",
+            "type": "string"
+          },
+          {
+            "description": "Individual strata within the general demographic or detail category. For example, Hispanic or Female. Will be Total Population if there is no stratification other than underlying cause of death.",
+            "name": "Strata_Name",
+            "title": "Strata Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "ICD_Revision",
+            "type": "string"
+          },
+          {
+            "description": "Count of events. If blank, see annotation for more information.",
+            "name": "Count",
+            "title": "Count",
+            "type": "number"
+          },
+          {
+            "description": "Annotation code for count as single digit:\r\n\r\n- blank = no annotation\r\n- 1 = cell suppressed for small numbers\r\n- 2 = cell suppressed for complementary cell\r\n- 3 = no data is available\r\n- 4 = statistically unstable value",
+            "name": "Annotation_Code",
+            "title": "Annotation Code",
+            "type": "string"
+          },
+          {
+            "description": "Descriptive text for the data annotation.",
+            "name": "Annotation_Desc",
+            "title": "Annotation Description",
+            "type": "string"
+          },
+          {
+            "description": "For provisional data, date when the data was extracted (MM/DD/YYYY). Provisional counts are based on the data available when the data was extracted and may not represent all events that occurred during the time period.",
+            "name": "Data_Extract_Date",
+            "title": "Data Extraction Date",
+            "type": "string"
+          },
+          {
+            "description": "Date data was created or revised (MM/DD/YYYY).",
+            "name": "Data_Revision_Date",
+            "title": "Data Revision Date",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/2e546f88-bba8-4d77-846a-7fb77846cac6/download/2025-08_deaths_provisional_county_month_sup.csv",
+          "title": "2024-2025 Provisional Deaths by Month by County"
+        }
+      ],
+      "title": "2024-2025 Provisional Deaths by Month by County"
+    },
+    {
+      "description": "This data table reports the annual number of deaths that occurred in each California county regardless of the place of residence (by occurrence) and deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "b2a17cef8e6c59f04056ed92542ad87b",
+      "name": "2014-2023-final-deaths-by-year-by-county",
+      "path": "2014-2023-final-deaths-by-year-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "ICD_Revision",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Data_Revision_Date",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/579cc04a-52d6-4c4c-b2df-ad901c9049b7/download/20241220_deaths_final_2014_2023_county_year_sup.csv",
+          "title": "2014-2023 Final Deaths by Year by County"
+        }
+      ],
+      "title": "2014-2023 Final Deaths by Year by County"
+    },
+    {
+      "description": "This data table reports the annual number of deaths that occurred in each California county regardless of the place of residence (by occurrence) and deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "4acb9f127fc7f1709a601fcaf60da6c3",
+      "name": "1999-2013-final-deaths-by-year-by-county",
+      "path": "1999-2013-final-deaths-by-year-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/e692e6a1-bddd-48ab-a0c8-fa0f1f43e9f4/download/2021-05-14_deaths_final_1999_2013_county_year_sup.csv",
+          "title": "1999-2013 Final Deaths by Year by County"
+        }
+      ],
+      "title": "1999-2013 Final Deaths by Year by County"
+    },
+    {
+      "description": "This data table reports the annual number of deaths that occurred in each California county regardless of the place of residence (by occurrence) and deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "59160506b38d14ae3f555f9f95ccd3a4",
+      "name": "1979-1998-final-deaths-by-year-by-county",
+      "path": "1979-1998-final-deaths-by-year-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/07fcb3be-6151-4c9f-a933-695e76b20a31/download/2021-06-04_deaths_final_1979_1998_county_year_sup.csv",
+          "title": "1979-1998 Final Deaths by Year by County"
+        }
+      ],
+      "title": "1979-1998 Final Deaths by Year by County"
+    },
+    {
+      "description": "This data table reports the annual number of deaths that occurred in each California county regardless of the place of residence (by occurrence) and deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed will affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not take into account contributing causes of death.",
+      "format": "CSV",
+      "hash": "afbb55d5374ca18773ec52223a7906f0",
+      "name": "1970-1978-final-deaths-by-year-by-county",
+      "path": "1970-1978-final-deaths-by-year-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/ccc3715a-4fe7-413f-bec1-0e677fcb2926/download/2021-05-14_deaths_final_1970_1978_county_year_sup.csv",
+          "title": "1970-1978 Final Deaths by Year by County"
+        }
+      ],
+      "title": "1970-1978 Final Deaths by Year by County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths that occurred in each California county regardless of the place of residence (by occurrence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "28b34e373f014454a8a29774758b89bc",
+      "name": "2019-2023-final-deaths-by-month-by-occurrence-county",
+      "path": "2019-2023-final-deaths-by-month-by-occurrence-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "ICD_Revision",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Data_Revision_Date",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/078185a9-e3a7-403f-a546-b8c582f0a9d8/download/20241220_deaths_final_2019-2023_occurrence_county_month_sup.csv",
+          "title": "2019-2023 Final Deaths by Month by Occurrence County"
+        }
+      ],
+      "title": "2019-2023 Final Deaths by Month by Occurrence County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "c73a8eb6ade6ac22219313f4ad29c5eb",
+      "name": "2019-2023-final-deaths-by-month-by-residence-county",
+      "path": "2019-2023-final-deaths-by-month-by-residence-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "ICD_Revision",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Data_Revision_Date",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/f0979d00-9add-40f3-a51f-1ce1ba039faa/download/20241220_deaths_final_2019-2023_residence_county_month_sup.csv",
+          "title": "2019-2023 Final Deaths by Month by Residence County"
+        }
+      ],
+      "title": "2019-2023 Final Deaths by Month by Residence County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths that occurred in each California county regardless of the place of residence (by occurrence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "0f295c3165023d6e16b58bde73569d82",
+      "name": "2014-2018-final-deaths-by-month-by-occurrence-county",
+      "path": "2014-2018-final-deaths-by-month-by-occurrence-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "ICD_Revision",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Data_Revision_Date",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/1a69fe2d-9796-49de-be51-1949d09b242a/download/20221215_deaths_final_2014-2018_occurrence_county_month_sup.csv",
+          "title": "2014-2018 Final Deaths by Month by Occurrence County"
+        }
+      ],
+      "title": "2014-2018 Final Deaths by Month by Occurrence County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "52ca9167d850dd953c4dfe7db3a420d6",
+      "name": "2014-2018-final-deaths-by-month-by-residence-county",
+      "path": "2014-2018-final-deaths-by-month-by-residence-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "ICD_Revision",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Data_Revision_Date",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/a97802a5-e2f7-4f25-adf3-72b2fd0eb9d3/download/20221215_deaths_final_2014-2018_residence_county_month_sup.csv",
+          "title": "2014-2018 Final Deaths by Month by Residence County"
+        }
+      ],
+      "title": "2014-2018 Final Deaths by Month by Residence County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths that occurred in each California county regardless of the place of residence (by occurrence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "50d042d4acb319ba7f91b464558523b3",
+      "name": "2009-2013-final-deaths-by-month-by-occurrence-county",
+      "path": "2009-2013-final-deaths-by-month-by-occurrence-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/489b2dc5-bac0-4ae3-b326-768bd3d907b5/download/2021-05-14_deaths_final_2009-2013_occurrence_county_month_sup.csv",
+          "title": "2009-2013 Final Deaths by Month by Occurrence County"
+        }
+      ],
+      "title": "2009-2013 Final Deaths by Month by Occurrence County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "5f65afd8fea0d91f880033175aced1d0",
+      "name": "2009-2013-final-deaths-by-month-by-residence-county",
+      "path": "2009-2013-final-deaths-by-month-by-residence-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/cc0854e2-c8c6-43a5-bc9d-d3b83848f498/download/2021-05-14_deaths_final_2009-2013_residence_county_month_sup.csv",
+          "title": "2009-2013 Final Deaths by Month by Residence County"
+        }
+      ],
+      "title": "2009-2013 Final Deaths by Month by Residence County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths that occurred in each California county regardless of the place of residence (by occurrence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "b28dd04af2760937b0579f1ca464c1d1",
+      "name": "2004-2008-final-deaths-by-month-by-occurrence-county",
+      "path": "2004-2008-final-deaths-by-month-by-occurrence-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/3f34d5dd-9b30-456b-9258-4d251b550035/download/2021-05-14_deaths_final_2004-2008_occurrence_county_month_sup.csv",
+          "title": "2004-2008 Final Deaths by Month by Occurrence County"
+        }
+      ],
+      "title": "2004-2008 Final Deaths by Month by Occurrence County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "65590c255d92eec0fe08c95195d25ddd",
+      "name": "2004-2008-final-deaths-by-month-by-residence-county",
+      "path": "2004-2008-final-deaths-by-month-by-residence-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/56d8e93b-2386-4077-9ead-a759e5e49b61/download/2021-05-14_deaths_final_2004-2008_residence_county_month_sup.csv",
+          "title": "2004-2008 Final Deaths by Month by Residence County"
+        }
+      ],
+      "title": "2004-2008 Final Deaths by Month by Residence County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths that occurred in each California county regardless of the place of residence (by occurrence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "dc4570641d1fd5e5323190bc634b1914",
+      "name": "1999-2003-final-deaths-by-month-by-occurrence-county",
+      "path": "1999-2003-final-deaths-by-month-by-occurrence-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/79da6336-d6eb-43cf-a124-1e657da300a9/download/2021-05-14_deaths_final_1999-2003_occurrence_county_month_sup.csv",
+          "title": "1999-2003 Final Deaths by Month by Occurrence County"
+        }
+      ],
+      "title": "1999-2003 Final Deaths by Month by Occurrence County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "772c2ad6d5fbc27a8f8e2f2882715dfa",
+      "name": "1999-2003-final-deaths-by-month-by-residence-county",
+      "path": "1999-2003-final-deaths-by-month-by-residence-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/7158b928-8096-4bbc-b553-3db1b443fca8/download/2021-05-14_deaths_final_1999-2003_residence_county_month_sup.csv",
+          "title": "1999-2003 Final Deaths by Month by Residence County"
+        }
+      ],
+      "title": "1999-2003 Final Deaths by Month by Residence County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths that occurred in each California county regardless of the place of residence (by occurrence) and deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "ddfbcd06146153de564485dce89e725e",
+      "name": "1989-1998-final-deaths-by-month-by-county",
+      "path": "1989-1998-final-deaths-by-month-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/3b152a6b-00d2-4561-95b1-8118754e9c71/download/2021-06-04_deaths_final_1989-1998__county_month_sup.csv",
+          "title": "1989-1998 Final Deaths by Month by County"
+        }
+      ],
+      "title": "1989-1998 Final Deaths by Month by County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths that occurred in each California county regardless of the place of residence (by occurrence) and deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed can affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not always take into account all conditions contributing to the death.\r\n\r\nCause of death categories for years 1999 and later are based on tenth revision of International Classification of Diseases (ICD-10) codes. Comparable categories are provided for years 1979 through 1998 based on ninth revision (ICD-9) codes. For more information on the comparability of cause of death classification between ICD revisions see [Comparability of Cause-of-death Between ICD Revisions](https://www.cdc.gov/nchs/nvss/mortality/comparability_icd.htm).",
+      "format": "CSV",
+      "hash": "8f6e7e71a991ab829a5d6be0cc432f5b",
+      "name": "1979-1988-final-deaths-by-month-by-county",
+      "path": "1979-1988-final-deaths-by-month-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/999438f4-2659-4888-ab09-fb4693d0f310/download/2021-06-04_deaths_final_1979-1988__county_month_sup.csv",
+          "title": "1979-1988 Final Deaths by Month by County"
+        }
+      ],
+      "title": "1979-1988 Final Deaths by Month by County"
+    },
+    {
+      "description": "This data table reports the monthly number of deaths that occurred in each California county regardless of the place of residence (by occurrence) and deaths to residents of each California county (by residence).\r\n\r\nThe cause of death categories are based solely on the underlying cause of death as coded by the International Classification of Diseases. The underlying cause of death is defined by the World Health Organization (WHO) as \"the disease or injury which initiated the train of events leading directly to death, or the circumstances of the accident or violence which produced the fatal injury.\" It is a single value assigned to each death based on the details as entered on the death certificate. When more than one cause is listed, the order in which they are listed will affect which cause is coded as the underlying cause. This means that similar events could be coded with different underlying causes of death depending on variations in how they were entered. Consequently, while underlying cause of death provides a convenient comparison between cause of death categories, it may not capture the full impact of each cause of death as it does not take into account contributing causes of death.",
+      "format": "CSV",
+      "hash": "35fb99a9f9506adc1ae4a7a27812f2e1",
+      "name": "1970-1978-final-deaths-by-month-by-county",
+      "path": "1970-1978-final-deaths-by-month-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "Geography_Type",
+            "type": "string"
+          },
+          {
+            "name": "Strata",
+            "type": "string"
+          },
+          {
+            "name": "Strata_Name",
+            "type": "string"
+          },
+          {
+            "name": "Cause",
+            "type": "string"
+          },
+          {
+            "name": "Cause_Desc",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Code",
+            "type": "string"
+          },
+          {
+            "name": "Annotation_Desc",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/8660d2a3-0913-4693-97fc-2de126a89548/download/2021-05-14_deaths_final_1970_1978_county_month_sup.csv",
+          "title": "1970-1978 Final Deaths by Month by County"
+        }
+      ],
+      "title": "1970-1978 Final Deaths by Month by County"
+    },
+    {
+      "format": "CSV",
+      "hash": "9dab457559dca87ba48e1f299922a9bf",
+      "name": "data-dictionary-deaths-by-county",
+      "path": "data-dictionary-deaths-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Field Title",
+            "type": "string"
+          },
+          {
+            "name": "Field Name",
+            "type": "string"
+          },
+          {
+            "name": "Data Type",
+            "type": "string"
+          },
+          {
+            "name": "Description",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/58619b69-b3cb-41a7-8bfc-fc3a524a9dd4/resource/9e7adc27-f912-44e2-83cc-1d3d70db6cc9/download/data-dictionary-deaths-by-county.csv",
+          "title": "Data Dictionary - Deaths by County"
+        }
+      ],
+      "title": "Data Dictionary - Deaths by County"
+    }
+  ],
+  "secondary_sources": "",
+  "sources": [
+    {
+      "name": "California Department of Public Health, Center for Health Statistics and Informatics, Vital Statistics Branch",
+      "web": "https://www.cdph.ca.gov/Programs/CHSI/Pages/Data-Applications.aspx"
+    }
+  ],
+  "temporal_coverage": "__Final Data Tables:__\r\n\r\n- 1970-1978\r\n\t- Total Population (only for all causes)\r\n\t- Age (only for all causes)\r\n\t- Gender (only for all causes)\r\n- 1979-2023\r\n\t- Total Population by Cause\r\n\t- Gender by Cause\r\n\t- Age (only for all causes)\r\n- 2000-2023\r\n\t- Race-Ethnicity by Cause\r\n- 2014-2023\r\n\t- Place Type (only for all causes)\r\n\r\n__Provisional Data Tables:__\r\n\r\n- 2024-2025\r\n\t- Total Population by Cause\r\n\t- Gender by Cause\r\n\t- Race-Ethnicity by Cause\r\n\t- Age (only for all causes)\r\n\t- Place Type (only for all causes)",
+  "title": "Death Profiles by County"
+}

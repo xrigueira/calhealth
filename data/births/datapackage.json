@@ -1,0 +1,305 @@
+{
+  "accrual_periodicity": "monthly",
+  "additional_limitations": "__Data Completeness:__ Provisional counts are based on the records available when the data was retrieved, given by Data\\_Extract\\_Date, and may not represent all births that occurred during the time period.",
+  "citation": "__Final Data:__\r\n\r\nCalifornia Department of Public Health. Birth Statistical Master File (Static), 1960-2017. Compiled by Center for Health Statistics and Informatics.\r\n\r\nCalifornia Department of Public Health. California Comprehensive Master Birth File (Static), 2018-2023. Compiled by Center for Health Statistics and Informatics.\r\n\r\n\r\n__Provisional Data:__\r\n\r\nCalifornia Department of Public Health. California Comprehensive Birth File (Dynamic), 2024-2025. Compiled by Center for Health Statistics and Informatics. Date extracted: _[Data\\_Extract\\_Date]_.",
+  "contact_email": "opendata@cdph.ca.gov",
+  "data_collection_tool": "- California Electronic Birth Registration System (CA-EBRS)\r\n- California Automated Vital Statistics System (AVSS)",
+  "data_license": "Terms of Use",
+  "de_identification_method": "In accordance with the [California Health and Human Services Data De-Identification Guidelines](https://chhsdata.github.io/dataplaybook/documents/CHHS-DDG-V1.0-092316.pdf), counts less than 11 have been suppressed to protect privacy and additional suppression has been applied to complementary cells to prevent the inference of the values of suppressed cells. An Annotation_Code of 1 denotes non-zero counts less than 11 suppressed due to small numbers, and an Annotation_Code of 2 denotes a cell suppressed as a complementary cell.\r\n\r\nSuppression is applied to complementary cells across all stratifications, including across all months for each year. Since annual counts will be provided once provisional data is finalized, complementary cells are suppressed across the months for each year even when annual counts have not yet been provided.",
+  "description": "This dataset contains counts of live births for California counties based on information entered on birth certificates. Final counts are derived from static data and include out of state births to California residents, whereas provisional counts are derived from incomplete and dynamic data. Provisional counts are based on the records available when the data was retrieved and may not represent all births that occurred during the time period.\r\n\r\nThe final data tables include both births that occurred in California regardless of the place of residence (by occurrence) and births to California residents (by residence), whereas the provisional data table only includes births that occurred in California regardless of the place of residence (by occurrence). The data are reported as totals, as well as stratified by parent giving birth's age, parent giving birth's race-ethnicity, and birth place type. See temporal coverage for more information on which strata are available for which years.",
+  "geo_coverage": "California",
+  "geographic_granularity": "county",
+  "keywords": [
+    "CDPH",
+    "CHSI",
+    "birth certificate",
+    "birth place",
+    "birthplace",
+    "births",
+    "ethnicity",
+    "live births",
+    "public health",
+    "race",
+    "vital statistics"
+  ],
+  "limitations": "Limitations",
+  "name": "live-birth-profiles-by-county",
+  "program_web_page": "https://www.cdph.ca.gov/Programs/CHSI/Pages/RAB-Data-And-Statistical-Reports.aspx",
+  "related_resources": "",
+  "resources": [
+    {
+      "description": "This data table reports the provisional monthly number of births that occurred in each California county regardless of the place of residence (by occurrence). __Provisional counts are based on the records available when the data was retrieved, given by Data\\_Extract\\_Date, and may not represent all births that occurred during the time period.__",
+      "format": "CSV",
+      "hash": "997238fa6220c33de44c6d24be535dc7",
+      "name": "2024-2025-provisional-births-by-month-by-county",
+      "path": "2024-2025-provisional-births-by-month-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Four-digit year in which the event occurred.",
+            "name": "Year",
+            "title": "Year",
+            "type": "string"
+          },
+          {
+            "description": "Two-digit month in which the event occurred. Records without valid months are excluded. The sum of counts by month for a given year may not equal the annual count.",
+            "name": "Month",
+            "title": "Month",
+            "type": "string"
+          },
+          {
+            "description": "Name of county for geography.",
+            "name": "County",
+            "title": "County Name",
+            "type": "string"
+          },
+          {
+            "description": "Whether the geography is based on the place of residence or place of occurrence. A geography type of Residence includes events for California residents even if they occurred outside of California, whereas a geography type of Occurrence includes events that occurred within California even if they were not California residents.",
+            "name": "Geography_Type",
+            "title": "Geography Type",
+            "type": "string"
+          },
+          {
+            "description": "General demographic or detail category under which events have been stratified. For example, Race-Ethnicity or Gender. Will be Total Population if there is no stratification.",
+            "name": "Strata",
+            "title": "Strata",
+            "type": "string"
+          },
+          {
+            "description": "Individual strata within the general demographic or detail category. For example, Hispanic or Female. Will be Total Population if there is no stratification.",
+            "name": "Strata_Name",
+            "title": "Strata Name",
+            "type": "string"
+          },
+          {
+            "description": "Count of events. If blank, see annotation for more information.",
+            "name": "Count",
+            "title": "Count",
+            "type": "number"
+          },
+          {
+            "description": "Annotation code for count as single digit: blank = no annotation; 1 = cell suppressed for small numbers; 2 = cell suppressed for complementary cell; 3 = no data is available; 4 = statistically unstable value.",
+            "name": "Annotation_Code",
+            "title": "Annotation Code",
+            "type": "string"
+          },
+          {
+            "description": "Descriptive text for the data annotation.",
+            "name": "Annotation_Desc",
+            "title": "Annotation Description",
+            "type": "string"
+          },
+          {
+            "description": "For provisional data, date when the data was extracted (MM/DD/YYYY). Provisional counts are based on the data available when the data was extracted and may not represent all events that occurred during the time period.",
+            "name": "Data_Extract_Date",
+            "title": "Data Extraction Date",
+            "type": "string"
+          },
+          {
+            "description": "Date data was created or revised (MM/DD/YYYY).",
+            "name": "Data_Revision_Date",
+            "title": "Data Revision Date",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/bc59b3db-3936-4c9b-9275-c5f4b3dc9023/resource/94a186da-7184-427b-b0b5-224bb0a05cd8/download/2025-08_births_provisional_county_month_sup.csv",
+          "title": "2024-2025 Provisional Births by Month by County"
+        }
+      ],
+      "title": "2024-2025 Provisional Births by Month by County"
+    },
+    {
+      "description": "This data table reports the monthly number of births that occurred in each California county regardless of the place of residence (by occurrence) and births to residents of each California county regardless of where the birth occurred (by residence).",
+      "format": "CSV",
+      "hash": "e9fd124ffd88f7a1e779157c3f4b94bc",
+      "name": "1960-2023-final-births-by-month-by-county",
+      "path": "1960-2023-final-births-by-month-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Four-digit year in which the event occurred.",
+            "name": "Year",
+            "title": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "description": "Name of county for geography.",
+            "name": "County",
+            "title": "County Name",
+            "type": "string"
+          },
+          {
+            "description": "Whether the geography is based on the place of residence or place of occurrence. A geography type of Residence includes events for California residents even if they occurred outside of California, whereas a geography type of Occurrence includes events that occurred within California even if they were not California residents.",
+            "name": "Geography_Type",
+            "title": "Geography Type",
+            "type": "string"
+          },
+          {
+            "description": "General demographic or detail category under which events have been stratified. For example, Race-Ethnicity or Gender. Will be Total Population if there is no stratification.",
+            "name": "Strata",
+            "title": "Strata",
+            "type": "string"
+          },
+          {
+            "description": "Individual strata within the general demographic or detail category. For example, Hispanic or Female. Will be Total Population if there is no stratification.",
+            "name": "Strata_Name",
+            "title": "Strata Name",
+            "type": "string"
+          },
+          {
+            "description": "Count of events. If blank, see annotation for more information.",
+            "name": "Count",
+            "title": "Count",
+            "type": "number"
+          },
+          {
+            "description": "Annotation code for count as single digit:\r\n\r\n- blank = no annotation\r\n- 1 = cell suppressed for small numbers\r\n- 2 = cell suppressed for complementary cell\r\n- 3 = no data is available\r\n- 4 = statistically unstable value",
+            "name": "Annotation_Code",
+            "title": "Annotation Code",
+            "type": "string"
+          },
+          {
+            "description": "Descriptive text for the data annotation.",
+            "name": "Annotation_Desc",
+            "title": "Annotation Description",
+            "type": "string"
+          },
+          {
+            "description": "Date data was created or revised (MM/DD/YYYY).\r\n",
+            "name": "Data_Revision_Date",
+            "title": "Data Revision Date",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/bc59b3db-3936-4c9b-9275-c5f4b3dc9023/resource/d6c30e46-8618-407a-ba5a-bae308f86a1c/download/20241030_births_final_county_month_sup.csv",
+          "title": "1960-2023 Final Births by Month by County"
+        }
+      ],
+      "title": "1960-2023 Final Births by Month by County"
+    },
+    {
+      "description": "This data table reports the annual number of births that occurred in each California county regardless of the place of residence (by occurrence) and births to residents of each California county regardless of where the birth occurred (by residence).",
+      "format": "CSV",
+      "hash": "bd0c05df1e6975352824f01f248da67a",
+      "name": "1960-2023-final-births-by-year-by-county",
+      "path": "1960-2023-final-births-by-year-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Four-digit year in which the event occurred.",
+            "name": "Year",
+            "title": "Year",
+            "type": "string"
+          },
+          {
+            "description": "Name of county for geography.",
+            "name": "County",
+            "title": "County Name",
+            "type": "string"
+          },
+          {
+            "description": "Whether the geography is based on the place of residence or place of occurrence. A geography type of Residence includes events for California residents even if they occurred outside of California, whereas a geography type of Occurrence includes events that occurred within California even if they were not California residents.",
+            "name": "Geography_Type",
+            "title": "Geography Type",
+            "type": "string"
+          },
+          {
+            "description": "General demographic or detail category under which events have been stratified. For example, Race-Ethnicity or Gender. Will be Total Population if there is no stratification.",
+            "name": "Strata",
+            "title": "Strata",
+            "type": "string"
+          },
+          {
+            "description": "Individual strata within the general demographic or detail category. For example, Hispanic or Female. Will be Total Population if there is no stratification.",
+            "name": "Strata_Name",
+            "title": "Strata Name",
+            "type": "string"
+          },
+          {
+            "description": "Count of events. If blank, see annotation for more information.",
+            "name": "Count",
+            "title": "Count",
+            "type": "number"
+          },
+          {
+            "description": "Annotation code for count as single digit:\r\n\r\n- blank = no annotation\r\n- 1 = cell suppressed for small numbers\r\n- 2 = cell suppressed for complementary cell\r\n- 3 = no data is available\r\n- 4 = statistically unstable value",
+            "name": "Annotation_Code",
+            "title": "Annotation Code",
+            "type": "string"
+          },
+          {
+            "description": "Descriptive text for the data annotation.",
+            "name": "Annotation_Desc",
+            "title": "Annotation Description",
+            "type": "string"
+          },
+          {
+            "description": "Date data was created or revised (MM/DD/YYYY).\r\n",
+            "name": "Data_Revision_Date",
+            "title": "Data Revision Date",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/bc59b3db-3936-4c9b-9275-c5f4b3dc9023/resource/260fbfb0-e386-465d-85a4-6f28868dd51a/download/20241030_births_final_county_year_sup.csv",
+          "title": "1960-2023 Final Births by Year by County"
+        }
+      ],
+      "title": "1960-2023 Final Births by Year by County"
+    },
+    {
+      "format": "CSV",
+      "hash": "601413408d5cfe0a85627a7f409eff1b",
+      "name": "data-dictionary-births-by-county",
+      "path": "data-dictionary-births-by-county.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Field Title",
+            "type": "string"
+          },
+          {
+            "name": "Field Name",
+            "type": "string"
+          },
+          {
+            "name": "Data Type",
+            "type": "string"
+          },
+          {
+            "name": "Description",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/bc59b3db-3936-4c9b-9275-c5f4b3dc9023/resource/49b07eb5-1312-4b9d-bd0e-ea2a89b852d1/download/data-dictionary-births-by-county.csv",
+          "title": "Data Dictionary - Births by County"
+        }
+      ],
+      "title": "Data Dictionary - Births by County"
+    }
+  ],
+  "secondary_sources": "",
+  "sources": [
+    {
+      "name": "California Department of Public Health, Center for Health Statistics and Informatics, Vital Statistics Branch",
+      "web": "https://www.cdph.ca.gov/Programs/CHSI/Pages/Data-Applications.aspx"
+    }
+  ],
+  "temporal_coverage": "__Final Data Tables:__\r\n\r\n- 1960-2023\r\n\t- Total Population\r\n\t- Parent Giving Birth's Age (only by year)\r\n- 2000-2023\r\n\t- Parent Giving Birth's Race-Ethnicity (only by year)\r\n- 2018-2023\r\n\t- Place Type\r\n\r\n__Provisional Data Tables:__\r\n\r\n- 2024-2025\r\n\t- Total Population\r\n\t- Place Type",
+  "title": "Live Birth Profiles by County"
+}
