@@ -7,4 +7,16 @@ Modeling health data from the US and California with data-driven algorithms.
     - [CDPH births](https://data.ca.gov/dataset/live-birth-profiles-by-county)
     - [CDPH deaths](https://data.ca.gov/dataset/death-profiles-by-county)
 
-2. Preprocessing
+2. Preprocess
+    - Length of stay: convert rcount, gender, and facid to numeric, and drop date columns.
+    - Births: build the births dataset by joining data from 1960 to 2023 (first file) with data from 2025 to 2025 (second file) on SQL.
+    This involves creating the stating tables, importing the CSV data into such tables, removing unnecessary columns (Strata_Name, Annotation_Code, Annotation_Desc, and Data_Revision_Date), performing a union, imputing null (cell-supression) values with 0, and getting state totals.
+    - Deaths: build the deaths dataset by joining data from 2014 to 2018 (first file), 2019 to 2023 (second file), and 2025 to 2025 (third file) on SQL.
+    This involved creating the stating tables, importing the CSV data into such tables, removing unnecessary columns (Geography_Type, ICD_Revision, Annotation_Code, Annotation_Desc, Data_Revision_Date), performing a union, and imputing null (cell-supression) values with 0.
+
+3. Modeling
+    - Length of stay: Build the traing and testing sets with a 80/20 split and apply standard scaling. Build Random Forest model (100 regression trees). Train, test, and evaluate resutls.
+    - Births: Build training and testing sets. Build neural network.
+
+4. Dashboard
+    Use deaths data starting on the 2014 dataset and all the way to 2024. Use SQL to join them, fill values, and delete columns not needed.

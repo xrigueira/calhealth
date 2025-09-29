@@ -1,5 +1,12 @@
 # Ignore the venv
 venv/
 
+# Ignore vs code settings and Python cache
+.vscode/
+__pycache__/
+
 # Ignore obs (obsolete) file
 obs.py
+
+# Ignore deaths final data
+data/deaths/deaths.csv
