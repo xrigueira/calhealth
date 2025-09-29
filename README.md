@@ -19,4 +19,8 @@ Modeling health data from the US and California with data-driven algorithms.
     - Births: Build training and testing sets. Build neural network.
 
 4. Dashboard
-    Use deaths data starting on the 2014 dataset and all the way to 2024. Use SQL to join them, fill values, and delete columns not needed.
+    4.1 Created a California map displaying the number of deaths by year, month, strata, and cause.
+    4.2 Built a stacked bar chart showing demographic and cause breakdowns as a function of year, month, and county.
+    4.3 Combined both visualizations into a dashboard, applying year, month, starta, and cause filters to both the map and bar chart.
+    4.4 Finally, added a filter action that allows users to click on a county (in the map) and automatically update the demographic breakdown (bar chart) based on the selection.
+    4.5 [Published](https://public.tableau.com/app/profile/xurxo.rigueira/viz/deaths_dash/Dashboard) Tableau Public.
