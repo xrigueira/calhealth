@@ -274,15 +274,21 @@ if __name__ == "__main__":
     nn_model.pipeline(epochs=n_epochs, batch_size=batch_size, lr=learning_rate)
     nn_model.save_results()
 
+    # Inverse transform the predictions and true values for plotting
+    y_ts_inv = nn_model.scaler.inverse_transform(nn_model.y_ts.reshape(-1, 1)).flatten()
+    y_hats_inv = nn_model.scaler.inverse_transform(nn_model.y_hats.reshape(-1, 1)).flatten()
+
     # Plot final results
     plt.figure(figsize=(10, 6))
-    plt.plot(nn_model.y_ts, label='True', color='blue')
-    plt.plot(nn_model.y_hats, label='Predicted', color='red')
+    plt.plot(y_ts_inv, label='True', color='blue')
+    plt.plot(y_hats_inv, label='Predicted', color='red')
     plt.xlabel('Time Step')
     plt.ylabel('Value')
     plt.title('True vs Predicted Values')
     plt.legend()
-    plt.show()
+
+    # Save final plot
+    plt.savefig('results/nn/forecast.png')
 
     # Calculate metrics
     mse = np.mean((nn_model.y_ts - nn_model.y_hats) ** 2)
