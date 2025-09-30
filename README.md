@@ -23,4 +23,4 @@ Modeling health data from the US and California with data-driven algorithms.
     - Built a stacked bar chart showing demographic and cause breakdowns as a function of year, month, and county.
     - Combined both visualizations into a dashboard, applying year, month, strata, and cause filters to both the map and bar chart.
     - Finally, added a filter action that allows users to click on a county (on the map) and automatically update the demographic breakdown (bar chart) based on the selection.
-    - [Published](https://public.tableau.com/app/profile/xurxo.rigueira/viz/deaths_dash/Dashboard) Tableau Public.
+    - [Published](https://public.tableau.com/app/profile/xurxo.rigueira/viz/deaths_dash/Dashboard) to Tableau Public.
